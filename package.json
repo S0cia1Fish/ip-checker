@@ -1,4 +1,14 @@
 {
-  "name": "ip-checker",
-  "version": "1.0.0"
+  "name": "my-vercel-project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "resend": "^1.0.0"
+  },
+  "engines": {
+    "node": "18.x"
+  }
 }
