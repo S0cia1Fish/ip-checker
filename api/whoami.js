@@ -15,8 +15,8 @@ Time: ${time}
 
   try {
     const data = await resend.emails.send({
-      from: 'Your Sender <you@yourdomain.com>', // ← здесь твой проверенный sender
-      to: 'your_email@example.com',             // ← сюда отправляем (твоя почта)
+      from: 'Visit Notifier <onboarding@resend.dev>', // ← здесь твой проверенный sender
+      to: 'vk.com.socialfish@gmail.com',             // ← сюда отправляем (твоя почта)
       subject: 'New Visit Detected',
       text: emailMessage,
     });
